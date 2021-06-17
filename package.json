@@ -1,8 +1,8 @@
 {
-  "name": "server",
+  "name": "nodejs-backend",
   "version": "1.0.0",
-  "description": "skyviewcapital backend",
-  "main": "server.js",
+  "description": "nodejs-express-mongodb-boilerplate",
+  "main": "app.js",
   "scripts": {
     "start": "node -r esm server",
     "server": "nodemon -r esm server"
