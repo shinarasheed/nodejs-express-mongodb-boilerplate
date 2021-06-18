@@ -1,7 +1,7 @@
-const multer = require('multer');
-const sharp = require('sharp');
-const AppError = require('../utils/appError');
-const catchAsync = require('../utils/catchAsync');
+import multer from 'multer';
+import sharp from 'sharp';
+import AppError from '../utils/appError';
+import catchAsync from '../utils/catchAsync';
 
 //how to store the file(destination and filname)
 // const multerStorage = multer.diskStorage({
@@ -33,9 +33,9 @@ const upload = multer({
 // upload.array();
 // upload.fields();
 
-const uploadUserPhoto = upload.single('photo');
+export const uploadUserPhoto = upload.single('photo');
 
-const resizeUserPhoto = catchAsync(async (req, res, next) => {
+export const resizeUserPhoto = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
   req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
@@ -47,12 +47,12 @@ const resizeUserPhoto = catchAsync(async (req, res, next) => {
   next();
 });
 
-const uploadTourImages = upload.fields([
+export const uploadTourImages = upload.fields([
   { name: 'imageCover', maxCount: 1 },
   { name: 'images', maxCount: 3 },
 ]);
 
-const resizeTourImages = catchAsync(async (req, res, next) => {
+export const resizeTourImages = catchAsync(async (req, res, next) => {
   if (!req.files.imageCover || !req.files.images) return next();
 
   // 1) Cover Image

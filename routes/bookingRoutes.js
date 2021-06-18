@@ -1,4 +1,6 @@
-const express = require('express');
+import express from 'express';
+import bookingController from '../controllers/bookingController';
+import { authenticate } from '../middleware/authMiddleware';
 const bookingController = require('../controllers/bookingController');
 const { authenticate, restrictTo } = require('../middleware/authMiddleware');
 

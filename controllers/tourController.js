@@ -1,8 +1,7 @@
-const Tour = require('../models/tourModel');
-const catchAsync = require('../utils/catchAsync');
-
-const factory = require('../controllers/handlerFactory');
-const AppError = require('../utils/appError');
+import Tour from '../models/tourModel';
+import catchAsync from '../utils/catchAsync';
+import factory from '../controllers/handlerFactory';
+import AppError from '../utils/appError';
 
 const getAllTours = factory.getAll(Tour);
 const getTour = factory.getOne(Tour, { path: 'reviews' });

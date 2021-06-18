@@ -1,11 +1,8 @@
-const express = require('express');
-const tourController = require('../controllers/tourController');
-const reviewRouter = require('../routes/reviewRoutes');
-const { authenticate, restrictTo } = require('../middleware/authMiddleware');
-const {
-  uploadTourImages,
-  resizeTourImages,
-} = require('../middleware/mediaUpload');
+import express from 'express';
+import tourController from '../controllers/tourController';
+import { authenticate, restrictTo } from '../middleware/authMiddleware';
+import { uploadTourImages, resizeTourImages } from '../middleware/mediaUpload';
+import reviewRouter from '../routes/reviewRoutes';
 
 const router = express.Router();
 

@@ -1,8 +1,8 @@
-const crypto = require('crypto');
-const User = require('../models/userModel');
-const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/appError');
-const Email = require('../utils/email');
+import crypto from 'crypto';
+import User from '../models/userModel';
+import catchAsync from '../utils/catchAsync';
+import AppError from '../utils/appError';
+import Email from '../utils/email';
 import { signToken, createAndSendToken } from '../utils/token';
 
 const signup = catchAsync(async (req, res, next) => {

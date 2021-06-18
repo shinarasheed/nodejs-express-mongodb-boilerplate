@@ -1,6 +1,6 @@
-const express = require('express');
-const reviewController = require('../controllers/reviewController');
-const { authenticate, restrictTo } = require('../middleware/authMiddleware');
+import express from 'express';
+import reviewController from '../controllers/reviewController';
+import { authenticate, restrictTo } from '../middleware/authMiddleware';
 
 const router = express.Router({ mergeParams: true });
 

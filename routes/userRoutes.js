@@ -1,11 +1,8 @@
-const express = require('express');
-const userController = require('../controllers/userController');
-const authController = require('../controllers/authController');
-const { authenticate, restrictTo } = require('../middleware/authMiddleware');
-const {
-  uploadUserPhoto,
-  resizeUserPhoto,
-} = require('../middleware/mediaUpload');
+import express from 'express';
+import userController from '../controllers/userController';
+import authController from '../controllers/authController';
+import { authenticate, restrictTo } from '../middleware/authMiddleware';
+import { uploadUserPhoto, resizeUserPhoto } from '../middleware/mediaUpload';
 
 const router = express.Router();
 

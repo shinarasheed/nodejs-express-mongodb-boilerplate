@@ -1,10 +1,10 @@
-const { promisify } = require('util');
-const User = require('../models/userModel');
-const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/appError');
-const jwt = require('jsonwebtoken');
+import { promisify } from 'util';
+import User from '../models/userModel';
+import catchAsync from '../utils/catchAsync';
+import AppError from '../utils/appError';
+import jwt from 'jsonwebtoken';
 
-const authenticate = catchAsync(async (req, res, next) => {
+export const authenticate = catchAsync(async (req, res, next) => {
   // 1) Getting token and check of it's there
   let token;
   if (
@@ -47,7 +47,7 @@ const authenticate = catchAsync(async (req, res, next) => {
   next();
 });
 
-const restrictTo = (...roles) => {
+export const restrictTo = (...roles) => {
   return (req, res, next) => {
     // roles ['admin', 'lead-guide']. role='user'
     if (!roles.includes(req.user.role)) {
@@ -59,5 +59,3 @@ const restrictTo = (...roles) => {
     next();
   };
 };
-
-module.exports = { authenticate, restrictTo };
