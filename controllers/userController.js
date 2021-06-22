@@ -56,7 +56,7 @@ const getAllUsers = factory.getAll(User);
 const updateUser = factory.updateOne(User);
 const deleteUser = factory.deleteOne(User);
 
-module.exports = {
+export default {
   getMe,
   getAllUsers,
   updateMe,

@@ -15,11 +15,11 @@ const createReview = factory.createOne(Review);
 const updateReview = factory.updateOne(Review);
 const deleteReview = factory.deleteOne(Review);
 
-module.exports = {
+export default reviewController = {
+  setTourUserIds,
   getAllReviews,
   getReview,
   createReview,
   updateReview,
   deleteReview,
-  setTourUserIds,
 };

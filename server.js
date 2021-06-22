@@ -1,7 +1,4 @@
-import dotenv from 'dotenv';
 import 'colors';
-
-dotenv.config();
 
 import app from './app';
 
@@ -12,3 +9,5 @@ const server = app.listen(PORT, () =>
     `App started in ${process.env.NODE_ENV} on port ${PORT}...`.yellow.bold
   )
 );
+
+export default server;

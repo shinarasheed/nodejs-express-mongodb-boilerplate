@@ -1,4 +1,5 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
@@ -10,6 +11,8 @@ import cookieParser from 'cookie-parser';
 import 'colors';
 import connectDB from './config/db';
 import router from './routes/index';
+
+dotenv.config();
 
 connectDB();
 
@@ -39,6 +42,7 @@ app.use('/api', limiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(cookieParser());
 
+//this was causing me some issues
 // app.use(mongoSanitize);
 
 //Data sanitization against XSS

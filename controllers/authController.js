@@ -144,7 +144,7 @@ const updatePassword = catchAsync(async (req, res, next) => {
   createAndSendToken(user, 200, res);
 });
 
-module.exports = {
+export default {
   signup,
   login,
   logout,

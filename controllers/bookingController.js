@@ -52,14 +52,14 @@ const createBooking = factory.createOne(Booking);
 const getBooking = factory.getOne(Booking);
 const getAllBooking = factory.getAll(Booking);
 const updateBooking = factory.updateOne(Booking);
-const deleteBooking = factory.deleteOne(Booking);
+const deleteBooking = factory.deleteOne;
 
-module.exports = {
-  getCheckoutSession,
-  createBookingCheckout,
+export default {
   createBooking,
   getBooking,
   getAllBooking,
   updateBooking,
   deleteBooking,
+  createBookingCheckout,
+  getCheckoutSession,
 };

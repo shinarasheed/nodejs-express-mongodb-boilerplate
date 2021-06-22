@@ -1,6 +1,6 @@
 import Tour from '../models/tourModel';
 import catchAsync from '../utils/catchAsync';
-import factory from '../controllers/handlerFactory';
+import factory from './handlerFactory';
 import AppError from '../utils/appError';
 
 const getAllTours = factory.getAll(Tour);
@@ -9,14 +9,14 @@ const createTour = factory.createOne(Tour);
 const updateTour = factory.updateOne(Tour);
 const deleteTour = factory.deleteOne(Tour);
 
-const aliasTopTous = (req, res, next) => {
+const aliasTopTour = (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = 'price,-ratingsAverage';
   req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
   next();
 };
 
-getTourStats = catchAsync(async (req, res, next) => {
+const getTourStats = catchAsync(async (req, res, next) => {
   const stats = await Tour.aggregate([
     {
       //the match stage pipeline is just a query
@@ -187,15 +187,14 @@ const getDistances = catchAsync(async (req, res, next) => {
   });
 });
 
-module.exports = {
-  aliasTopTous,
+export default {
   getAllTours,
   getTour,
   createTour,
   updateTour,
   deleteTour,
-  getTourStats,
-  getMostBusyMonth,
+  aliasTopTour,
   getToursWithin,
+  getTourStats,
   getDistances,
 };

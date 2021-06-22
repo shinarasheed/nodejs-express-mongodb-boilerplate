@@ -27,4 +27,4 @@ router
   .patch(bookingController.updateBooking)
   .delete(bookingController.deleteBooking);
 
-module.exports = router;
+export default router;

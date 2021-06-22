@@ -10,7 +10,7 @@ router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 router.post('/forgetpassword', authController.forgetPassword);
-router.patch('/resetpassword/:token', authController.resetPassword);
+router.patch('/resetpassword/:token', authController.updatePassword);
 
 //This will protect all the routes below this middlware
 router.use(authenticate);
@@ -39,4 +39,4 @@ router
   .patch(userController.updateUser)
   .delete(userController.deleteUser);
 
-module.exports = router;
+export default router;

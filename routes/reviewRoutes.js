@@ -21,4 +21,4 @@ router
   .patch(restrictTo('user', 'admin'), reviewController.updateReview)
   .delete(restrictTo('user', 'admin'), reviewController.deleteReview);
 
-module.exports = router;
+export default router;

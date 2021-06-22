@@ -85,4 +85,4 @@ const getAll = (Model) =>
     });
   });
 
-module.exports = { deleteOne, updateOne, createOne, getOne, getAll };
+export default { deleteOne, createOne, updateOne, getAll, getOne };
