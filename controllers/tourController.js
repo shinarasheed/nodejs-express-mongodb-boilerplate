@@ -195,6 +195,7 @@ export default {
   deleteTour,
   aliasTopTour,
   getToursWithin,
+  getMostBusyMonth,
   getTourStats,
   getDistances,
 };
