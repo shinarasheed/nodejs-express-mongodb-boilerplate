@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node -r esm server",
-    "server": "nodemon -r esm server"
+    "server": "nodemon -r esm server",
+    "data:import": "node -r esm seeder -i",
+    "data:destroy": "node -r esm seeder -d"
   },
   "author": "gravitysoftwares",
   "license": "MIT",

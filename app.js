@@ -36,7 +36,7 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again in an hour',
 });
 
-app.use('/api', limiter);
+app.use('/api/v1', limiter);
 
 //Bodyparser.  parse body data
 app.use(express.json({ limit: '10kb' }));
@@ -56,6 +56,6 @@ app.get('/', (req, res) => {
 });
 
 //api router
-app.use('/api', router);
+app.use('/api/v1', router);
 
 export default app;
